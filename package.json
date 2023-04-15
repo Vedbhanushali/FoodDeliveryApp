@@ -1,0 +1,27 @@
+{
+  "name": "ment",
+  "version": "1.0.0",
+  "description": "This is a development app",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Vedbhanushali/ment.git"
+  },
+  "author": "Ved Bhanushali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vedbhanushali/ment.git)/issues"
+  },
+  "homepage": "https://github.com/Vedbhanushali/ment.git)#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
