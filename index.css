@@ -24,3 +24,17 @@ body {
     padding: 10px;
 
 }
+.card{
+    width: 200px;
+    border: 1px solid aqua;
+    margin: 10px;
+}
+.restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-image {
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+}
