@@ -1,36 +1,52 @@
 import * as Constants from "../constants.js";
 import RestaurantDeconstructor from "./RestaurantCard.jsx";
-import { useState } from "react"; //importing useState from react
+import { useState,useEffect } from "react"; 
+import Shimmer from "./Shimmer.jsx";
 
-
-/* 
-what is hook
-Hooks are nothing but js function
-every hook has specific function to it
-*/
-
-/*
-What is UseState ?
-It is JS hook which is used to create state variables
-
-What does UseState Return ?
-It returns an array 
-first variable is variable name
-second parameter is setting function name
-*/
 function filterData(searchText,restaurants) {
-  const filterData = restaurants.filter((restaurant) => restaurant.data.name.includes(searchText));
+  const filterData = restaurants.filter((restaurant) => restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
   return filterData;
 }
 const Body = ()=>{
-    let localVar = "ved";
     
-    const [restaurants,setRestaurant] = useState(Constants.restaurantList);
-    //state variable of restaurantlist create to update it when searched is preformed
-    const [searchText,setSearchText] = useState("");//useState("ved"); //ved is default value of variable
-    //usestate variable are tracked by react -- it will rerender UI when change in state of variables
-    //normal state variables even after change does not rerender UI
-    return (
+    // const [restaurants,setRestaurant] = useState(Constants.restaurantList);
+    const [allrestaurants,setAllRestaurant] = useState([]);
+    const [filteredRestaurants,setFilteredRestaurants] = useState([]);
+    const [searchText,setSearchText] = useState("");
+
+    // API call
+    useEffect(() =>{
+      //api call
+      console.log("api call");
+      // fetch(Constants.SWIGGY_API);
+      // can't call directly using fetch need to use async function
+      getRestaurants();
+    },[]); //empty dependency array so that only call one time at load of page
+
+    async function getRestaurants(){
+      //this is example but in reality browser doesn't support call from local host to swiggy api 
+      const data = await fetch(Constants.SWIGGY_API);
+      //data returns a readable stream need to convert to json format
+      const json = await data.json();
+      console.log(json);
+      //optional chaining
+      setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+      setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    }
+
+    console.log("render");
+
+    if(!allrestaurants) return null; // no restaurants found
+
+    // if(filteredRestaurants?.length === 0)
+    //   return( <h1>No restaurants found</h1>);
+
+
+    //conditional rendering
+    // if restaurant is empty => shimmer UI
+    // if restaurant has data => render actual data
+    return (allrestaurants.length === 0) ? (<Shimmer />):
+    (
       <>
         <div className="search-container">
           <input 
@@ -39,44 +55,34 @@ const Body = ()=>{
             placeholder="search" 
             value={searchText}
             onChange = {(e)=>{
-              //searchText = e.target.value; //can't directly modify state variable
               setSearchText(e.target.value);
             }}
           />
-          {
-            // this line is parameter of inpput and onChange parameter looks for changes in the input and that changes is given to event e and can be passed to next call back function written.
-            //onChange={(e)=>console.log(e)} //wher ever input is changed this function will be called and it has e event as parameter
-            //onChange={(e)=>console.log(e.target.value)} //where ever input is changed this function will be called input value will be printed in console
-
-            /*
-            one more catch is there we can directy modify local variable of js 
-            onChange={(e)=>{
-              localVar = e.target.value; // it won't work
-            }} 
-            */
-            
-            /* 
-            Need to create react variable
-            every component in react maintains a state we can put all the variable to that state.
-            
-            */
-          }
           <button 
             className="search-btn"
             onClick={()=>{
-              //need to fiter the data
-              const data = filterData(searchText,restaurants);
-              // and update the restaurants state variable
-              setRestaurant(data);
-
+              const data = filterData(searchText,allrestaurants);
+              setFilteredRestaurants(data);
             }}
           >search</button>
         </div>
         <div className="restaurant-list">
             {
-              restaurants.map((restaurant) => {
-                return <RestaurantDeconstructor {...restaurant.data} key={restaurant.data.id}/>;
-              })
+              //only JS expression works here not JS statements
+              // This will not work
+              // let a =10;
+              // console.log(a);
+              //this will also not work
+              // if(filteredRestaurants?.length === 0)
+              //   return <h1>No restaurants found</h1> 
+              // else 
+              // filteredRestaurants.map((restaurant) => {
+              //   return <RestaurantDeconstructor {...restaurant.data} key={restaurant.data.id}/>;
+              // })
+                
+              filteredRestaurants?.length == 0 ? (<h1>No restaurants found</h1>) : filteredRestaurants.map((restaurant) => {
+                  return <RestaurantDeconstructor {...restaurant.data} key={restaurant.data.id}/>
+                })
             }
         </div>
       </>
