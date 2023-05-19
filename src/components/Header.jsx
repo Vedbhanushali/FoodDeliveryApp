@@ -1,10 +1,11 @@
-//we can name this file extension as js or jsx both are correct
-// jsx is just not a normal js file so normally developers rename it to jsx
-
 import { useState } from "react";
+//importing link for browser routing
+import {Link} from "react-router-dom"
+
+import Logo from "../../assets/img/logo.jpeg";
 
 
-//inline styling=====END==================
+
 
 function LoggedInUser() {
     //API call to check authentication
@@ -12,11 +13,15 @@ function LoggedInUser() {
 }
 const Title = ()=>{
     return (
-        <a href="/">
+        <>
+        {/*<a href="/"> This is not effecient use Link compomnent of react*/}
+        <Link to="/">
         <img 
         className="logo"
-        src="https://tmlogosave.s3.ap-south-1.amazonaws.com/5653883.jpeg" alt="LOGO"/>
-        </a>
+        src={Logo} alt="LOGO"/>
+        </Link>
+        {/* </a> */}
+        </>
     )
 };
 const Header = ()=>{
@@ -26,25 +31,31 @@ const Header = ()=>{
             <Title />
             <div className="nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
+                <li>
+                    <Link to="/">
+                        Home
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/about">
+                        About
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/contact">
+                        Contact
+                    </Link>
+                </li>
                     <li>Cart</li>
+                    <li>
+                    {
+                        isLoggedIn ? <button onClick={()=> setIsLoggedIn(false)}>Logout</button> : <button onClick={()=> setIsLoggedIn( true)}>Login</button>
+                    }
+                    </li>
                 </ul>
             </div>
-            {
-                //only JS expression works here not JS statements
-                // This will not work
-                // let a =10;
-                // console.log(a);
-
-                // To run above statement
-                ((a=10),console.log(a))
-            }
-            {
-                isLoggedIn ? <button onClick={()=> setIsLoggedIn(false)}>Logout</button> : <button onClick={()=> setIsLoggedIn( true)}>Login</button>
-            }
-        </div>); //need to wrap in () when writing in multiple line
+            
+        </div>); 
 };
 
 export default Header;
