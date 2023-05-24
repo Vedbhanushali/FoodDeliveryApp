@@ -62,7 +62,7 @@ const Body = ()=>{
                   to={"/restaurant/" + restaurant.data.id}
                   key={restaurant.data.id}
                   >
-                  <RestaurantDeconstructor {...restaurant.data}/>342
+                  <RestaurantDeconstructor {...restaurant.data}/>
                   </Link>)
                 })
             }

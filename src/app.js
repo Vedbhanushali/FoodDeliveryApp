@@ -1,6 +1,5 @@
 import React, { Children } from "react";
 import ReactDOM from "react-dom/client";
-//importing link for browser routing
 import {Link, Outlet} from "react-router-dom"
 
 import Header from "./components/Header";
@@ -10,6 +9,7 @@ import Footer from "./components/Footer";
 import {createBrowserRouter ,  RouterProvider} from "react-router-dom";
 import About  from "./components/About";
 import Contact from "./components/Contact"; 
+import Profile from "./components/Profile";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Error from "./components/Error";
 
@@ -25,13 +25,11 @@ const AppLayout = ()=>{
     );
 };
 
-//define createBrowserRouter after main component
-//createBrowserRouter contains configuration list of paths which says URL and component to loads
 const appRouter = createBrowserRouter([
     {
         path: "/",
         element: <AppLayout />,
-        errorElement: <Error />,//if any wrong URL is provided from this page it will show Erro component
+        errorElement: <Error />,
         children: [
             {
                 path: "/",
@@ -40,7 +38,13 @@ const appRouter = createBrowserRouter([
             {
                 path: "/about",
                 element: <About />,
-                // errorElement: <Error />
+                children:[
+                    {
+                        path: "profile", //here writing profile not "/profile" because this will be considered as path from root
+                        //but we don't want this we want path like localhost/about/profile
+                        element: <Profile />
+                    }
+                ]
             },
             {
                 path: "/contact",
@@ -55,6 +59,4 @@ const appRouter = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-//we don't want to render our applayout we want to render as per path and our appRouter contains our configuration of browser routes
-// root.render(<AppLayout />);
 root.render(<RouterProvider router={appRouter} />)
