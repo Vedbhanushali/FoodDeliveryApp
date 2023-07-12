@@ -19,8 +19,15 @@ const Body = ()=>{
     },[]); 
 
     async function getRestaurants(){ 
-      const data = await fetch(Constants.SWIGGY_API);
-      const json = await data.json();
+        const json = await fetch(Constants.SWIGGY_API).   then(response => {
+          if (!response.ok) {
+            throw new Error(response.statusText)
+          }
+          return response.json()
+        }).catch(err=>{
+        console.log(err)
+      });
+      // const json = await data;
       // console.log(json);
       setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards);
       setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
