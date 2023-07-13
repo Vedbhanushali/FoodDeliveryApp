@@ -44,7 +44,6 @@ It relies on the import and export statements to detect if code modules are expo
 
 In modern JavaScript applications, we use module bundlers (e.g., webpack or Rollup) to automatically remove dead code when bundling multiple JavaScript files into single files. This is important for preparing code that is production ready, for example with clean structures and minimal file size.
 
-
 ## What is Hot Module Replacement?
 
 Hot Module Replacement (HMR) improves the development experience by automatically updating modules in the browser at runtime without needing a whole page refresh. This means that application state can be retained as you change small things. Parcel's HMR implementation supports both JavaScript and CSS assets.  
@@ -108,12 +107,12 @@ It is a generated file and is not designed to be manually edited. Its purpose is
 
 ## What is `node_modules` ? Is it a good idea to push that on git?
 
-
 node_modules folder is like a cache for the external modules that your project depends upon. When you npm install them, they are downloaded from the web and copied into the node_modules folder and Node.js is trained to look for them there when you import them (without a specific path).  
 I refer to it as a cache because the node_modules folder can be entirely recreated from scratch at any time by just reinstalling all the dependent modules (that should be listed in your project folders) so IT is not good idea to push node modules in server/git repo.  
 This is because there's no reason to store copies of all your dependent modules in your own GitHub project. The exact version you were using is known and stored in your package.json or package-lock.json so at any time you or anyone else using your project can download your code and then fetch all the other dependent modules from their original source (including even the exact same versions you were using). So, there isn't any reason to store a separate duplicate copy of all those dependent modules in your own project. That would just be wasteful and would complicate upgrading to a newer version of all those dependent modules.
 
 ## What is the `dist` folder?
+
 - The /dist stands for distributable.
 - The /dist folder contains the minimized version of the source code.
 - The code present in the /dist folder is actually the code which is used on production web applications.
