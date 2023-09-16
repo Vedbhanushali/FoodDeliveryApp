@@ -115,8 +115,7 @@ This is because there's no reason to store copies of all your dependent modules 
 
 - The /dist stands for distributable.
 - The /dist folder contains the minimized version of the source code.
-- The code present in the /dist folder is actually the code which is used on production web applications.
-Along with the minified code, the /dist folder also comprises of all the compiled modules that may or may not be used with other systems.
+- The code present in the /dist folder is actually the code which is used on production web applications. Along with the minified code, the /dist folder also comprises of all the compiled modules that may or may not be used with other systems.
 - It is easier to add files to the /dist folder as it is an automatic process. All the files are automatically copied to the dist folder on save.
 - The /dist folder also contains all those files which are required to run/build a module for use with other platforms- either directly in the browser, or in an AMD system (eg. require.js).
 - Ideally, it is considered a good practice to clean the /dist folder before each build.

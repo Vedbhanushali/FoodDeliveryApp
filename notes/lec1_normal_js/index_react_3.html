@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>1st thing made using react</h1>
+    <div id="root">Not Rendered</div>
+    <h1>2nd thing is static</h1>
+    <div id="container">
+        <h1>heading 1</h1>
+        <h2>heading 2</h2>
+    </div>
+    
+    <!-- order in rendering matters need to load react script first before using in our own script  -->
+    <!-- react library injected in html file  -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+
+    <!-- React Core method  -->
+    <!-- creating same H1 tag using react which we created using javascript -->
+    <!-- this methods is complicated -->
+    <script>
+        const heading1 = React.createElement(
+            "h1",
+            {
+                id:"title",
+            },
+            "heading 1"
+        );
+        const heading2 = React.createElement(
+            "h2",
+            {
+                id:"title",
+            },
+            "heading 2"
+        );
+        const container =  React.createElement(
+            "div",
+            {
+                id:"container",
+            },
+            [heading1,heading2]
+        )
+        // need to pass elements as array 
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(container);
+    </script>
+</body>
+</html>

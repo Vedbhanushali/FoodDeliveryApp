@@ -1,0 +1,43 @@
+<!-- In this file we are directly injecting react js in this html file -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="header"><h1>Header</h1></div>
+    <div id="root">
+        Not Rendered Here.  
+        <!-- use this for checking faulty rendering due to wrong configuration of react -->
+    </div>
+    <div id="footer"><h1>Footer</h1></div>
+    
+    <!-- order in rendering matters need to load react script first before using in our own script  -->
+    <!-- react library injected in html file  -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+
+    <!-- creating same H1 tag using react which we created using javascript -->
+    <script>
+        // three parameters 1- tag_name, 2 - {} props used to provide attributes to elements created for example
+        const heading1 = React.createElement("h1",{
+            id:"title",
+        }, "title attributed h1");
+        const heading =  React.createElement("h1",{},"Namaste Everyone"); //creating h1 tag using react
+        //heading is nothing but an javascript object which is created using react library which is written by facebook developer
+        const root = ReactDOM.createRoot(document.getElementById("root")); //creating root element where all our project dynamics will be rendered 
+        //react need to know where you want changes
+        //there will be one root and one render method
+        //there is only one root where we can render
+
+        // root.render(heading1); <- for attributed heading
+        root.render(heading);
+        //react will override all the data present in root div whene render
+    </script>
+</body>
+</html>

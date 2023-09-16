@@ -25,13 +25,15 @@ And it’s called React because it reacts. It was developed by Facebook (a site 
 
 ## What is crossorigin in script tag?
 
-example - 
+example -
+
 ```html
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 crossorigin="anonymous">
 </script>
 ```
+
 The crossorigin attribute sets the mode of the request to an HTTP CORS Request.
 
 Web pages often make requests to load resources on other servers. Here is where CORS comes in.
@@ -86,7 +88,7 @@ The production environment executes the code and is used by end users or custome
 - Source Map can be disabled at runtime to reduce the size of the code
 - Also, Gzipping code to compress and reduce the size
 
-## What is async and defer? 
+## What is async and defer?
 
 <https://youtu.be/IrHmpdORLu8>
 
@@ -116,4 +118,3 @@ another example is when we want to load external scripts google analytic or othe
 ## References
 
 <https://react.dev/reference/react/createElement>
-
