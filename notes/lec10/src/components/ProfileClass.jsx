@@ -31,9 +31,9 @@ class Profile extends React.Component {
 
         //when we load this component lets have an setInterval which will call back function every 1 sec
         /* code commented just for explanation */
-        // this.timer = setInterval(() => {
-        //     console.log("Namaste Ved");
-        // },1000);
+        this.timer = setInterval(() => {
+            console.log("Namaste Ved");
+        },1000);
         
         //issue with Single page application it is still calling because we are not reloading the page.
         //This needs to be clean up which is performed in componentWillUnmount
@@ -56,7 +56,7 @@ class Profile extends React.Component {
         // This will shared between all functions of this class.
         
         /* code commented just for explanation */
-        // clearInterval(this.timer);
+        clearInterval(this.timer);
         console.log("child componentWillUnmount");
     }
     render(){

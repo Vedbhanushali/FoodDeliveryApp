@@ -23,3 +23,7 @@ Start the server
 ```bash
   npm run start
 ```
+
+LICENSE
+
+[MIT LICENSE](/FoodDeliveryApp/LICENSE)

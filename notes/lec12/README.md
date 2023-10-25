@@ -17,7 +17,7 @@ SCSS and SASS -> CSS
 
 using style attributes which takes JS object  
 
-```javascript
+```jsx
 <h1 style={heading}>Hey</h1>
 <script>  
     const heading = {
@@ -26,8 +26,10 @@ using style attributes which takes JS object
     }
 </script>
 ```
+
 or we can also write directly
-```
+
+```jsx
 <h1 
 style={
     backgroundColor: "red",
@@ -66,7 +68,7 @@ to only use Tailwind CSS.
 
 Every class we write should be unique.
 
-Installation - Refer DOCUMENTATION  https://tailwindcss.com/docs/installation  
+Installation - Refer DOCUMENTATION  <https://tailwindcss.com/docs/installation>  
 
 importing TAILWIND CSS using CDN
 

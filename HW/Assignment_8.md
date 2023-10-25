@@ -5,7 +5,7 @@
 A: We can create a `Nested Routes` inside a react router configuration as follows:
 first call createBrowserRouter for routing different pages
 
-```
+```jsx
 const router = createBrowserRouter([
    {
       path: "/", // show path for routing
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
 
 Now we can create a nested routing for `/path` using `children` again as follows:
 
-```
+```jsx
 const router = createBrowserRouter([
    {
       path: "/",

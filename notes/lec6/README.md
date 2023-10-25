@@ -1,7 +1,7 @@
 # React Folder Structure
 
-React developer recommended structure is by features  
-we care creating a src folder where we will create components  
+React developer recommended structure is by features
+we will be creating a src folder where we will create components  
 
 ## Config file
 
@@ -11,4 +11,4 @@ so that only one place change is need and it will be reflected in all components
 ## use state variable
 
 React uses one way data binding  
-can't use normal javascript variables
+can't use normal javascript variables  

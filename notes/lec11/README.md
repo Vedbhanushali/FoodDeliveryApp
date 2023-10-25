@@ -1,9 +1,4 @@
-# Lec 11
-
-
-lazy loading  
-
-## custom hooks  
+# Lec 11 lazy loading  custom hooks  
 
 when should build custom hook
 why and how  
@@ -30,5 +25,5 @@ this all are same concepts.
 we cannot bundler everything into one - we have to create
 logical bundles.  
 
-when you are loading your component on demand react tries to 
+when you are loading your component on demand react tries to
 suspend loading during render.  

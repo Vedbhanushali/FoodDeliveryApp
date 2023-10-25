@@ -1,6 +1,6 @@
 const Footer = ()=>{
     return (
-        <div></div>
+        <div>Food Delivery Application 2023.</div>
     );
 };
 

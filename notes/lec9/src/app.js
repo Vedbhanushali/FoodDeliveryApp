@@ -13,8 +13,6 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Error from "./components/Error";
 
-
-
 const AppLayout = ()=>{
     return (
         <>
@@ -31,7 +29,7 @@ const appRouter = createBrowserRouter([
     {
         path: "/",
         element: <AppLayout />,
-        errorElement: <Error />,//if any wrong URL is provided from this page it will show Erro component
+        errorElement: <Error />,//if any wrong URL is provided from this page it will show Error component
         children: [
             {
                 path: "/",

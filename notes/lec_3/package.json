@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Vedbhanushali/ment.git"
+    "url": "git+ssh://git@github.com/Vedbhanushali/FoodDeliveryApp.git"
   },
   "author": "Ved Bhanushali",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Vedbhanushali/ment.git)/issues"
+    "url": "https://github.com/Vedbhanushali/FoodDeliveryApp.git)/issues"
   },
-  "homepage": "https://github.com/Vedbhanushali/ment.git)#readme",
+  "homepage": "https://github.com/Vedbhanushali/FoodDeliveryApp.git)#readme",
   "devDependencies": {
     "babel-plugin-transform-remove-console": "^6.9.4",
     "parcel": "^2.8.3",

@@ -9,7 +9,7 @@ ES6 is converted to another code
 
 we can add commands in script tags which can act as alias
 
-```
+```json
 scripts:{
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -18,20 +18,23 @@ scripts:{
 ```
 
 to run those script in terminal
-npx is eqaual to npm run
-```
+npx is equal to npm run
+
+```bash
 npm run start
 ```
-or 
-```
-npm start
+
+or
+
+```bash
+npx start
 ```
 
 ## console logs  
 
 console logs are not directly removed need to install bable plugin transform remove console
 
-```
+```bash
 npm install babel-plugin-transform-remove-console --save-dev
 ```
 
@@ -40,9 +43,9 @@ this plugin can be configured by two ways CLI and .bablerc file
 To use bable we can create a configuration file
 bable.rc
 
-configuration is avaliable at https://babeljs.io/docs/babel-plugin-transform-remove-console/
+configuration is avaliable at <https://babeljs.io/docs/babel-plugin-transform-remove-console/>
 
-```
+```json
 {
   "plugins": [["transform-remove-console", { "exclude": ["error", "warn"] }]]
 }

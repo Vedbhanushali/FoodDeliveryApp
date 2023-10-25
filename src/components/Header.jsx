@@ -44,12 +44,16 @@ const Header = ()=>{
                         Instamart
                     </Link>
                 </li>
-                    <li className="px-2" >Cart</li>
-                    <li className="px-2">
-                    {
-                        isLoggedIn ? <button onClick={()=> setIsLoggedIn(false)}>Logout</button> : <button onClick={()=> setIsLoggedIn( true)}>Login</button>
-                    }
-                    </li>
+                <li  className="px-2">
+                    Cart
+                </li>
+                <li>
+                    <button
+                    onClick={() => setIsLoggedIn(!isLoggedIn)}>
+                        {isLoggedIn ? "Logout" : "Login"}
+                    </button>
+                </li>
+                
                 </ul>
             </div>
             

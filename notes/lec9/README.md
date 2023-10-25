@@ -40,4 +40,3 @@ mean when we click on restaurant card it dynamically opens
 ### useParams
 
 react router dom hooks which allows us to capture id/argument which is passed in url
-

@@ -4,13 +4,11 @@ import {Link} from "react-router-dom"
 
 import Logo from "../../assets/img/logo.jpeg";
 
-
-
-
 function LoggedInUser() {
     //API call to check authentication
     return true;
 }
+
 const Title = ()=>{
     return (
         <>
@@ -46,12 +44,20 @@ const Header = ()=>{
                         Contact
                     </Link>
                 </li>
-                    <li>Cart</li>
-                    <li>
+                <li>
+                    Cart
+                </li>
+                {/* <li>
                     {
                         isLoggedIn ? <button onClick={()=> setIsLoggedIn(false)}>Logout</button> : <button onClick={()=> setIsLoggedIn( true)}>Login</button>
                     }
-                    </li>
+                </li> */}
+                <li>
+                    <button
+                    onClick={setIsLoggedIn(!isLoggedIn)}>
+                        {isLoggedIn ? "Login" : "Logout"}
+                    </button>
+                </li>
                 </ul>
             </div>
             

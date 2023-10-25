@@ -1,6 +1,6 @@
-## Our Application is powered by many packages which is handled by NPM package manager
+# Our Application is powered by many packages which is handled by NPM package manager
 
-```
+```bash
 nmp init -y
 ```
 
@@ -25,7 +25,7 @@ Tree shaking  - removing un-wanted like if functions are not used in code then t
 
 ## we will be installing parcel from npm
 
-```
+```bash
 npm install -D parcel
 ```
 
@@ -60,7 +60,7 @@ It is not good way because what is cdn link goes down
 
 so to install react in our node modules
 
-```
+```bash
 npm install react
 ```
 
@@ -68,7 +68,7 @@ here we are not using -D because we want react in our production as well as deve
 
 also installing npm react dom
 
-```
+```bash
 npm -i react-dom
 ```  
 
@@ -76,14 +76,14 @@ npm -i react-dom
 
 after installation we need to import react in our script
 
-```
+```jsx
 import React from "react:
 import ReactDOM from "react-dom/client"
 ```
 
 and when adding that script tag in body of html file need to add it as type="module" for example  
 
-```
+```jsx
 <script src="app.js" type="module"></script>
 ```
 
@@ -94,13 +94,13 @@ npx - npm execute
 
 this creates a development build and serves on the server
 
-```
+```bash
 npx parcel index.html
 ```
 
 to make production build
 
-```
+```bash
 npx parcel build index.html
 ```
 
@@ -108,7 +108,7 @@ npx parcel build index.html
 
 after installtion of react need to import it from node modules which we downloaded using parcel in script js file
 
-```
+```jsx
 import React from "react";
 import ReactDOM from "react-dom/client";
 ```
@@ -118,14 +118,14 @@ import ReactDOM from "react-dom/client";
 contains builds of production.  
 when production build is made like
 
-```
+```bash
 npx parcel build index.html
 ```
 
-and doing this will create error becuase in package.json file we contain main:app.js as entry point but we are pacing entry point in argument which is handled by parcel we will be removing that line
+and doing this will create error because in package.json file we contain main:app.js as entry point but we are pacing entry point in argument which is handled by parcel we will be removing that line
 Remove -
 
-```
+```json
 main:app.js
 ```
 
@@ -137,7 +137,7 @@ html css and js file
 to make application compatible with older browsers.
 we have this module in node modules and to use it we have to write browser list in package.json file and values can be fetch from the link <https://browserslist.dev/>
 
-```
+```json
 "browserslist":[
     "last 2 versions",
     "last 2 chrome versions",
