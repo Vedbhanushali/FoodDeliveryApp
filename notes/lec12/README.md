@@ -1,8 +1,15 @@
 # Lec 12
 
+## CSS framework and library
+
+- Material ui
+- base ui
+- tailwind css
+- Ant design
+
 ## writing CSS methods
 
-### External CSS file  
+### External CSS file - custom css file
 
 traditional methods of writing CSS.  
 
@@ -78,6 +85,7 @@ importing TAILWIND CSS using CDN
 ```
 
 importing Tailwind CSS using npm package
+steps - <https://tailwindcss.com/docs/guides/parcel>
 
 ```javascript
 npm install -D tailwindcss postcss
@@ -98,3 +106,9 @@ In index.css there will be CSS file we just have to put this in that file nothin
 ```
 
 Install Tailwind extension in visual studio for better development experience.
+
+## Tailwind css dynamic value to style / square bracket notation
+
+```jsx
+<div className="w-[200px]">test</div>
+```

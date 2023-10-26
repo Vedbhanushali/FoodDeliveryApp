@@ -28,9 +28,9 @@ const Body = ()=>{
         console.log(err)
       });
       // const json = await data;
-      // console.log(json);
-      setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards);
-      setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+      console.log(json);
+      // setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+      // setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     }
 
     if(!useOnline()){

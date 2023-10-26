@@ -3,7 +3,8 @@
 
 export const IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
-export const SWIGGY_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.2456616&lng=69.6676292&page_type=DESKTOP_WEB_LISTING";
+// export const SWIGGY_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.2456616&lng=69.6676292&page_type=DESKTOP_WEB_LISTING";
+export const SWIGGY_API = "https://www.swiggy.com/api/seo/getListing?lat=23.144477092557135&lng=72.59576804274302"
 
 export const SWIGGY_RES_MENU = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.2419997&lng=69.6669324&restaurantId=239792&submitAction=ENTER";
 
