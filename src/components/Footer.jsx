@@ -1,6 +1,6 @@
-const Footer = ()=>{
+const Footer = () => {
     return (
-        <div></div>
+        <div className="bg-red-400">Footer</div>
     );
 };
 
