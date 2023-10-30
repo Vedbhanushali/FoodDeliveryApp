@@ -1,5 +1,21 @@
 // with options
+//commented for development when building production uncomment it
 {
     //"plugins": [["transform-remove-console", { "exclude": ["error", "warn"] }]]
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "node": "current"
+                }
+            }
+        ],
+        [
+            "@babel/preset-react",
+            {
+                "runtime": "automatic"
+            }
+        ]
+    ]
 }
-//commented for development when building production uncomment it
