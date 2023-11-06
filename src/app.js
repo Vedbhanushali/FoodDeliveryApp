@@ -16,6 +16,9 @@ import Shimmer from "./components/Shimmer";
 // import UserContext from "../utils/userContext"
 import UserContext from "../utils/userContext";
 // import Instamart from "./components/Instamart";
+//redux
+import { Provider } from "react-redux";
+import store from "../utils/store";
 
 // Lazy loading instamart
 const Instamart = lazy(() => import("./components/Instamart"));
@@ -38,7 +41,7 @@ const AppLayout = () => {
     // component not wrap inside context provider will no have modified value  
     //useEffect() -> authenticating and setting user.
     return (
-        <>
+        <Provider store={store}>
             <UserContext.Provider value={{
                 user: user,
                 setUser: setUser
@@ -47,7 +50,7 @@ const AppLayout = () => {
                 <Outlet />
                 <Footer />
             </UserContext.Provider>
-        </>
+        </Provider>
     );
 };
 
