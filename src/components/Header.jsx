@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom"
+import { useSelector } from "react-redux"
 import useOnline from "../../utils/useOnline";
 import UserContext from "../../utils/userContext";
 import Logo from "../../assets/img/logo.jpeg";
@@ -21,6 +22,7 @@ const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const isOnline = useOnline()
     const { user } = useContext(UserContext)
+    const cartItems = useSelector(store => store.cart.items)
 
     return (<div className="flex justify-between bg-pink-200 shadow-xl">
         <Title />
@@ -47,7 +49,7 @@ const Header = () => {
                     </Link>
                 </li>
                 <li className="px-2">
-                    Cart
+                    Cart - {cartItems.length} items
                 </li>
                 <li className="px-2">
                     {isOnline ? "online" : "offline"}

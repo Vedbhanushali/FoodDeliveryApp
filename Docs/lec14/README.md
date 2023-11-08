@@ -19,3 +19,33 @@ selector - to read from slice of store
 npm i @reduxjs/toolkit #core library
 npm i react-redux # bridge between redux and react
 ```
+
+## steps
+
+1. Create Store
+
+    - configurestore() - RTK
+
+2. Provide  store to app
+
+    - <Provider store = {store}> import from react-redux
+
+3. create Slice
+
+    - RTK - createSIice({
+            name:
+            initialState :
+            reducers: {
+                addItem: (state,action) => {}
+            }
+        })
+        export const {addItem,..} = cartSlice.actions; // all actions
+        export default cartSLice.reducer;
+
+4. put that slice into store
+    - {
+        reducer: { // add all reducers here default export of slice
+            cart: cartSlice,
+            user: userSlice
+        }
+    }
