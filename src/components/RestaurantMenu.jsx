@@ -39,6 +39,7 @@ const RestaurantMenu = () => {
                                 <li key={item?.card?.info?.id}>
                                     {item?.card?.info?.name}
                                     <button onClick={() => addFoodItem(item)}>add menu</button>
+                                    {/* when clicked on add button it dispatch an action which cause reducer function which updates the slice of redux store */}
                                 </li>
                             );
                         })

@@ -23,6 +23,7 @@ const Header = () => {
     const isOnline = useOnline()
     const { user } = useContext(UserContext)
     const cartItems = useSelector(store => store.cart.items)
+    //cartItems is subscribe to store using useselector
 
     return (<div className="flex justify-between bg-pink-200 shadow-xl">
         <Title />
@@ -49,7 +50,9 @@ const Header = () => {
                     </Link>
                 </li>
                 <li className="px-2">
-                    Cart - {cartItems.length} items
+                    <Link to="/cart">
+                        Cart - {cartItems.length} items
+                    </Link>
                 </li>
                 <li className="px-2">
                     {isOnline ? "online" : "offline"}
