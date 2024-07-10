@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-const UserContext = createContext({
+const UserContext = createContext({ //default value of context
     user: {
         name: "dummy name",
         email: "dummy email"

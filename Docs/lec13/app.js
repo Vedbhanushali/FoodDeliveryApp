@@ -13,7 +13,6 @@ import Profile from "./components/Profile";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Error from "./components/Error";
 import Shimmer from "./components/Shimmer";
-// import UserContext from "../utils/userContext"
 import UserContext from "../utils/userContext";
 // import Instamart from "./components/Instamart";
 
@@ -39,7 +38,7 @@ const AppLayout = () => {
     //useEffect() -> authenticating and setting user.
     return (
         <>
-            <UserContext.Provider value={{
+            <UserContext.Provider value={{ //value set here can be accessed inside all component this context.provider wraps
                 user: user,
                 setUser: setUser
             }}>

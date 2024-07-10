@@ -49,3 +49,7 @@ npm i react-redux # bridge between redux and react
             user: userSlice
         }
     }
+
+## Redux DevTools browswer extension
+
+useful for debugging
