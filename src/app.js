@@ -1,12 +1,11 @@
 import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Link, Outlet } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
-
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Profile from "./components/Profile";
@@ -14,33 +13,19 @@ import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Error from "./components/Error";
 import Shimmer from "./components/Shimmer";
-// import UserContext from "../utils/userContext"
+const Instamart = lazy(() => import("./components/Instamart"));
+
+
 import UserContext from "../utils/userContext";
-// import Instamart from "./components/Instamart";
 //redux
 import { Provider } from "react-redux";
 import store from "../utils/store";
-
-// Lazy loading instamart
-const Instamart = lazy(() => import("./components/Instamart"));
-// so when we click on instamart mark then only its JS will be loaded
-//in application. so first time it will throw an error. to resolve this first time issue 
-// suspence comes here , wrap the component in shimmer before rendering in router path and 
-// also it takes a parameter fallback (shimmer) which is render till the api / data is loaded from api.
 
 const AppLayout = () => {
     const [user, setUser] = useState({
         name: "ved Bhanushali",
         email: "ved@space.com"
     })
-
-    // suppose we are login using useEffect and dynamically setting the login user data in user
-    // as this user info is required in whole application we are setting in context data
-    // this context user data is dummy but we can update it using provider.
-    // we need to wrap our whole application inside Context.provider because it is being used
-    // by whole application
-    // component not wrap inside context provider will no have modified value  
-    //useEffect() -> authenticating and setting user.
     return (
         <Provider store={store}>
             <UserContext.Provider value={{
@@ -70,8 +55,7 @@ const appRouter = createBrowserRouter([
                 element: <About />,
                 children: [
                     {
-                        path: "profile", //here writing profile not "/profile" because this will be considered as path from root
-                        //but we don't want this we want path like localhost/about/profile
+                        path: "profile",
                         element: <Profile />
                     }
                 ]
