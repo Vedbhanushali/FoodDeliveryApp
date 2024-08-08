@@ -33,7 +33,7 @@ also need to install jest as testing library is dependent upon it
 npm i -D jest
 ```
 
-configure jest
+### configure jest
 
 ```cmd
 npx jest --init
@@ -67,7 +67,7 @@ Create a new test
 
 Create a new unit test
 
-- jest does not understand jsx so need to configure babel for complining jsx
+- jest does not understand jsx so need to configure babel for compyling jsx
 
   ```cmd
   npm i -D @babel/preset-react

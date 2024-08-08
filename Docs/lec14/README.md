@@ -1,7 +1,7 @@
 # Redux
 
-Instead of creating context for large scale application we can create a redux store to maintain our data.
-for small application no need of using redux. can use react context instead of it.
+- Instead of creating context for large scale application we can create a redux store to maintain our data.
+- For small application no need of using redux. can use react context instead of it.
 
 ## Redux toolkit
 
@@ -24,31 +24,38 @@ npm i react-redux # bridge between redux and react
 
 1. Create Store
 
-    - configurestore() - RTK
+    - ```configurestore() - RTK```
 
 2. Provide  store to app
 
-    - <Provider store = {store}> import from react-redux
+    - ```<Provider store = {store}> //import from react-redux```
 
 3. create Slice
 
-    - RTK - createSIice({
-            name:
-            initialState :
-            reducers: {
-                addItem: (state,action) => {}
-            }
-        })
-        export const {addItem,..} = cartSlice.actions; // all actions
-        export default cartSLice.reducer;
+    RTK
+
+    ```
+    createSIice({
+        name:
+        initialState :
+        reducers: {
+            addItem: (state,action) => {}
+        }
+    })
+    export const {addItem,..} = cartSlice.actions; // all actions
+    export default cartSLice.reducer;
+    ```
 
 4. put that slice into store
-    - {
+
+    ```
+    {
         reducer: { // add all reducers here default export of slice
             cart: cartSlice,
             user: userSlice
         }
     }
+    ```
 
 ## Redux DevTools browswer extension
 
