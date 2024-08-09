@@ -2,7 +2,7 @@
 
 ## different type of testing
 
-- manual testing (job of tester)
+- Manual testing (job of tester)
 - Automation testing (job of QA)
   - selenium tool
 - End to End testing (convers entire user journey)
@@ -21,13 +21,13 @@
 used jest (**a delightful javascript testing framework.**)behind the scene
 older projects use Enzyme for testing project
 
-### Installation
+### Installation react testing library
 
 ```cmd
 npm install --save-dev @testing-library/react
 ```
 
-also need to install jest as testing library is dependent upon it
+### Install jest as testing library is dependent upon it
 
 ```cmd
 npm i -D jest
@@ -39,7 +39,15 @@ npm i -D jest
 npx jest --init
 ```
 
-installed jest-environment-jsdom required package for jest version above 28
+configuring jest will create - jest.config.js
+
+- typescript = no
+- environment = jsdom (browser-like) #frontend
+- coverage report = yes
+- provider to instrument code coverage = babel
+- automatically clear mock calls (garbage collection) = true
+
+### installed jest-environment-jsdom required package for jest version above 28
 
 ```cmd
 npm i -D jest-environment-jsdom
@@ -81,3 +89,9 @@ Create a new unit test
             }
   ]
   ```
+
+## to execute test scritps
+
+```
+npm run test
+```
