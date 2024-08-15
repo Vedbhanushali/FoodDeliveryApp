@@ -1,3 +1,4 @@
+// babel.config is can also be used for the same purpose
 // with options
 //commented for development when building production uncomment it
 {

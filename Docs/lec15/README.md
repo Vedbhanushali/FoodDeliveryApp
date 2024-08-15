@@ -53,11 +53,13 @@ configuring jest will create - jest.config.js
 npm i -D jest-environment-jsdom
 ```
 
-Create a new test
+## Create a new test
 
 - create a new folder ```__tests__``` this is to indetified tests of application
 - for creating a unit test create a file of extension ```name.test.js```
 - configure babel for jest
+
+## configure babel to compile jest files
 
   ```cmd
   npm install --save-dev babel-jest @babel/core @babel/preset-env
@@ -90,7 +92,7 @@ Create a new unit test
   ]
   ```
 
-## to execute test scritps
+## Execute test scritps
 
 ```
 npm run test
